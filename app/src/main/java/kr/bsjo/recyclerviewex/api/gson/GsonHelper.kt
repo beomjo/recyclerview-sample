@@ -7,7 +7,7 @@ import com.google.gson.TypeAdapter
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonWriter
-import kr.bsjo.recyclerviewex.api.model.type.OutputType
+import kr.bsjo.recyclerviewex.model.type.OutputType
 import java.lang.reflect.Type
 
 object GsonHelper {

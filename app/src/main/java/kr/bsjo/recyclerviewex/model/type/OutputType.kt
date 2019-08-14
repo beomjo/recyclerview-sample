@@ -1,5 +1,5 @@
 
-package kr.bsjo.recyclerviewex.api.model.type
+package kr.bsjo.recyclerviewex.model.type
 
 enum class OutputType {
     ToString,

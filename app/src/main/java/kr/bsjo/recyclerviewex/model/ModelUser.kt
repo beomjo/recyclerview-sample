@@ -1,4 +1,4 @@
-package kr.bsjo.recyclerviewex.api.model
+package kr.bsjo.recyclerviewex.model
 
 data class ModelUser(
     val avatar_url: String = "",

@@ -1,6 +1,6 @@
 package kr.bsjo.recyclerviewex.api.gson
 
-import kr.bsjo.recyclerviewex.api.model.type.OutputType
+import kr.bsjo.recyclerviewex.model.type.OutputType
 import java.io.Serializable
 
 open class JsonElementAs(val obj: Any, val outputType: OutputType) : Serializable {

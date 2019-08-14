@@ -1,8 +1,8 @@
 package kr.bsjo.recyclerviewex.api.service
 
 import io.reactivex.Single
-import kr.bsjo.recyclerviewex.api.model.ModelRepo
-import kr.bsjo.recyclerviewex.api.model.ModelUser
+import kr.bsjo.recyclerviewex.model.ModelRepo
+import kr.bsjo.recyclerviewex.model.ModelUser
 import retrofit2.http.GET
 import retrofit2.http.Path
 
