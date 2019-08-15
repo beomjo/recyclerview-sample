@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/adapter"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="vm" type="kr.bsjo.recyclerviewex.MainVm"/>
+    </data>
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
 
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/adapter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{vm.adapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </LinearLayout>
+</layout>
