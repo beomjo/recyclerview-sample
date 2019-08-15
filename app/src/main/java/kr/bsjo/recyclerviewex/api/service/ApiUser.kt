@@ -16,7 +16,8 @@ interface ApiUser {
     fun userRepo(
         @Path("user") user: String,
         @Query("page") page: Int,
-        @Query("per_page") perPage: Int
+        @Query("per_page") perPage: Int,
+        @Query("sort") param: String = "stargazers_count"
     ): Single<List<ModelRepo>>
 
 }

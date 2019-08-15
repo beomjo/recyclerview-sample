@@ -7,14 +7,13 @@ import kr.bsjo.recyclerviewex.api.ApiService
 import kr.bsjo.recyclerviewex.model.ModelRepo
 import kr.bsjo.recyclerviewex.paging.base.BasePageKeyDataSource
 
-class RepoDataSource(val user: String) : BasePageKeyDataSource<ModelRepo>() {
+class RepoDataSource(private val user: String) : BasePageKeyDataSource<ModelRepo>() {
 
     override fun loadInitialData(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, ModelRepo>) {
         ApiService.github()
             .userRepo(user, 0, params.requestedLoadSize)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe(this::addDisposable)
             .subscribe(
                 { items -> submitInitialData(items, params, callback) },
                 { error -> submitInitialError(error) }
@@ -24,10 +23,9 @@ class RepoDataSource(val user: String) : BasePageKeyDataSource<ModelRepo>() {
 
     override fun loadAditionalData(params: LoadParams<Int>, callback: LoadCallback<Int, ModelRepo>) {
         ApiService.github()
-            .userRepo(user, 0, params.requestedLoadSize)
+            .userRepo(user, params.key, params.requestedLoadSize)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe(this::addDisposable)
             .subscribe(
                 { items -> submitData(items, params, callback) },
                 { error -> submitError(error) }

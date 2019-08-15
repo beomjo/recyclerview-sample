@@ -12,11 +12,12 @@ android {
     buildToolsVersion "29.0.0"
     defaultConfig {
         applicationId "kr.bsjo.recyclerviewex"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
 
     dataBinding {
@@ -42,7 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //Supprot Library
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
     implementation 'androidx.recyclerview:recyclerview:1.1.0-beta02'
 
     //gson
@@ -67,5 +68,11 @@ dependencies {
     implementation "androidx.paging:paging-runtime:$paging_version" // For Kotlin use paging-runtime-ktx
     testImplementation "androidx.paging:paging-common:$paging_version" // For Kotlin use paging-common-ktx
     implementation "androidx.paging:paging-rxjava2:$paging_version" // For Kotlin use paging-rxjava2-ktx
+
+    //viewModel and lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+//    implementation "androidx.lifecycle:lifecycle-common-java8:2.0.0"
+    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime:2.2.0-alpha03"
 }
 
