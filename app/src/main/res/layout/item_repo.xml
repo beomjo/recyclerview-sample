@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,12 +15,14 @@
             android:orientation="vertical">
 
         <TextView
+                android:id="@+id/repoName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="userName"
                 android:textStyle="bold"
                 android:gravity="center|start"/>
         <TextView
+                android:id="@+id/repoContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -29,6 +32,7 @@
     </LinearLayout>
 
     <TextView
+            android:id="@+id/stars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="1"
