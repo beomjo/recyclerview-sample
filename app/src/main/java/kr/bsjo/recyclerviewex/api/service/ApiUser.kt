@@ -5,6 +5,7 @@ import kr.bsjo.recyclerviewex.model.ModelRepo
 import kr.bsjo.recyclerviewex.model.ModelUser
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface ApiUser {
 
@@ -12,6 +13,10 @@ interface ApiUser {
     fun user(@Path("user") user: String): Single<ModelUser>
 
     @GET("users/{user}/repos")
-    fun userRepo(@Path("user") user: String): Single<List<ModelRepo>>
+    fun userRepo(
+        @Path("user") user: String,
+        @Query("page") page: Int,
+        @Query("per_page") perPage: Int
+    ): Single<List<ModelRepo>>
 
 }
