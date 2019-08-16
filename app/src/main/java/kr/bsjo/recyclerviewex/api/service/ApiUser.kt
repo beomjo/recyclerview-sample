@@ -9,6 +9,13 @@ import retrofit2.http.Query
 
 interface ApiUser {
 
+    /**
+     * Github API Descroption
+     * https://developer.github.com/v3/guides/traversing-with-pagination/
+     * https://developer.github.com/v3/#conditional-requests
+     * https://developer.github.com/v3/repos/#list-user-repositories
+     * */
+
     @GET("users/{user}")
     fun user(@Path("user") user: String): Single<ModelUser>
 
