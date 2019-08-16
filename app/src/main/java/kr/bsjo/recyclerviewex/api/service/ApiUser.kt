@@ -17,7 +17,7 @@ interface ApiUser {
         @Path("user") user: String,
         @Query("page") page: Int,
         @Query("per_page") perPage: Int,
-        @Query("sort") param: String = "stargazers_count",
+        @Query("sort") param: String = "updated", // created, updated, pushed, full_name. Default: created
         @Query("client_id") cliendId: String = "68dc6a579632099ac35d",
         @Query("client_secret") clientSetret: String = "dccb1170cd682abd6ebf6ec7f96e3c61f40882d4"
     ): Single<List<ModelRepo>>

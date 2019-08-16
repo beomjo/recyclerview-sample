@@ -22,7 +22,14 @@
         <TextView
                 android:id="@+id/repoContent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                tools:text="repo discription"/>
+        <TextView
+                android:id="@+id/updatedAt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="updated_at"/>
+
     </LinearLayout>
 
 

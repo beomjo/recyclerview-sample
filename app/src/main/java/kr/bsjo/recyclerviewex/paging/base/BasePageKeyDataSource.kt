@@ -39,6 +39,7 @@ abstract class BasePageKeyDataSource<T> : PageKeyedDataSource<Int, T>() {
     }
 
     protected fun submitData(items: List<T>, params: LoadParams<Int>, callback: LoadCallback<Int, T>) {
+        /** adjacentPageKey: 후속 페이지로드 (이전 페이지 입력 / 다음 페이지 입력 ) 또는 현재로드 방향으로로드 할 페이지가 더 이상없는 경우 키입니다 */
         val adjacentPageKey = if (items.isEmpty()) null else params.key + items.size
         callback.onResult(items, adjacentPageKey)
         onDataSourceLoading.onDataLoadingEnd()

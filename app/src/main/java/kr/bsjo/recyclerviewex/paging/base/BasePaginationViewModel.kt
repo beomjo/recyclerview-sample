@@ -52,6 +52,7 @@ abstract class BasePaginationViewModel<T : DataSource.Factory<Int, K>, K> : View
             dataSourceFactory,
             PagedList.Config.Builder()
                 .setPageSize(getPageSize())
+                .setInitialLoadSizeHint(getPageSize() * 4) // default setInitialLoadSizeHint = pageSize*3
                 .setEnablePlaceholders(false)
                 .build()
         )

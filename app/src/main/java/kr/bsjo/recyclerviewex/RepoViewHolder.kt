@@ -18,6 +18,7 @@ class RepoViewHolder(
         itemView.repoName.text = item?.name
         itemView.repoContent.text = item?.description
         itemView.stars.text = item?.stargazers_count.toString()
+        itemView.updatedAt.text=item?.updated_at
     }
 
 }
