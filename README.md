@@ -1,4 +1,4 @@
-# RecyclerViewEx
+# RecyclerView Sample
 
 ### paging Branch
 GitHub API로 페이징 예제 구현  
